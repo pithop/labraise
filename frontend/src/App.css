@@ -129,7 +129,7 @@ p { font-size: 1.125rem; line-height: 1.7; color: var(--color-gray-700); }
 
 /* Applique le filtre de flou sur la vidéo */
 .hero-video {
-  filter: blur(3px); /* Vous pouvez ajuster cette valeur (ex: 2px, 4px) */
+  filter: blur(2px); /* Vous pouvez ajuster cette valeur (ex: 2px, 4px) */
 }
 
 /* Ajoute une ombre portée pour la lisibilité du texte */
