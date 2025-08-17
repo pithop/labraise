@@ -24,6 +24,7 @@ const HomePage = () => {
           autoPlay 
           loop 
           muted 
+          playsInline
           className="hero-video absolute z-0 w-full h-full object-cover"
         >
           <source src="/videos/hero-video.mp4" type="video/mp4" />
