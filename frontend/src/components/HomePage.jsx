@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useEffect, useRef } from 'react';
 import Navigation from './Navigation';
 import { Clock, MapPin, Phone, Star, Flame, Users, Award } from 'lucide-react';
 import { restaurantInfo, menuData, galleryImages, testimonials } from '../mock';
