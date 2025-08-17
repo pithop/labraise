@@ -1,30 +1,22 @@
 /* Import des polices */
-@import url('https://fonts.googleapis.com/css2?family=Crimson+Text:ital,wght@0,400;0,600;0,700;1,400&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&family=Roboto:wght@400;500&display=swap');
 
-/* Variables CSS personnalisées selon les guidelines */
+/* Variables CSS personnalisées */
 :root {
-  --color-primary: #ECEC75; /* Bright lime-yellow */
-  --color-primary-dark: #e6e67c; /* Darker tint for cards */
-  --color-black: #0f172a;
-  --color-gray-50: #f8fafc;
-  --color-gray-600: #64748b;
-  --color-gray-900: #1e293b;
+  --color-primary: #f4f1eb;
+  --color-secondary: #c89c6d;
+  --color-accent: #e57373;
+  --color-black: #1a1a1a;
   --color-white: #ffffff;
-  
-  --font-serif: 'Crimson Text', 'Times New Roman', serif;
-  --font-sans: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Helvetica Neue', Arial, sans-serif;
-  
-  --spacing-xs: 0.25rem;
-  --spacing-sm: 0.5rem;
-  --spacing-md: 1rem;
-  --spacing-lg: 1.5rem;
+  --color-gray-700: #4a5568;
+  --color-gray-900: #1a202c;
+  --font-serif: 'Playfair Display', serif;
+  --font-sans: 'Roboto', sans-serif;
   --spacing-xl: 2rem;
   --spacing-2xl: 3rem;
   --spacing-3xl: 4rem;
-  
   --border-radius: 6px;
   --border-radius-lg: 12px;
-  --shadow-sm: 0 1px 2px rgba(0, 0, 0, 0.05);
   --shadow-md: 0 4px 6px rgba(0, 0, 0, 0.1);
   --shadow-lg: 0 10px 15px rgba(0, 0, 0, 0.1);
 }
@@ -40,85 +32,62 @@ body {
   font-family: var(--font-sans);
   line-height: 1.6;
   color: var(--color-black);
-  background: var(--color-primary);
+  background-color: var(--color-primary);
 }
 
-/* Typography hiérarchique selon les guidelines */
+/* Typography */
 h1, h2, h3 {
   font-family: var(--font-serif);
   font-weight: 700;
   line-height: 1.2;
-  margin-bottom: var(--spacing-lg);
 }
 
-h1 {
-  font-size: 3.5rem;
-  margin-bottom: var(--spacing-xl);
-}
+h1 { font-size: 3.5rem; }
+h2 { font-size: 2.5rem; }
+h3 { font-size: 1.75rem; font-weight: 600; }
+p { font-size: 1.125rem; line-height: 1.7; color: var(--color-gray-700); }
 
-h2 {
-  font-size: 2.5rem;
-  margin-bottom: var(--spacing-lg);
-}
-
-h3 {
-  font-size: 1.75rem;
-  font-weight: 600;
-}
-
-p {
-  font-size: 1.125rem;
-  line-height: 1.7;
-  margin-bottom: var(--spacing-lg);
-  color: var(--color-gray-900);
-}
-
-/* Boutons selon les guidelines */
+/* Boutons */
 .btn-primary {
-  background: var(--color-black);
+  background: var(--color-secondary);
   color: var(--color-white);
-  border: none;
+  border: 2px solid var(--color-secondary);
   border-radius: var(--border-radius);
   padding: 12px 24px;
   font-weight: 600;
   font-size: 16px;
-  font-family: var(--font-sans);
   cursor: pointer;
-  text-decoration: none;
-  display: inline-block;
   transition: all 0.2s ease;
 }
 
 .btn-primary:hover {
-  background: var(--color-gray-900);
-  transform: translateY(-1px);
+  background: #b3895e;
+  border-color: #b3895e;
+  transform: translateY(-2px);
   box-shadow: var(--shadow-lg);
 }
 
 .btn-secondary {
   background: transparent;
-  color: var(--color-black);
-  border: 2px solid var(--color-black);
+  color: var(--color-white);
+  border: 2px solid var(--color-white);
   border-radius: var(--border-radius);
   padding: 10px 22px;
   font-weight: 600;
   font-size: 16px;
-  font-family: var(--font-sans);
   cursor: pointer;
-  text-decoration: none;
-  display: inline-block;
   transition: all 0.2s ease;
 }
 
 .btn-secondary:hover {
-  background: var(--color-black);
-  color: var(--color-white);
-  transform: translateY(-1px);
+  background: var(--color-white);
+  color: var(--color-black);
+  transform: translateY(-2px);
 }
 
 /* Cards et sections */
 .card {
-  background: var(--color-primary-dark);
+  background: var(--color-white);
   padding: var(--spacing-2xl);
   border-radius: var(--border-radius-lg);
   box-shadow: var(--shadow-md);
@@ -126,20 +95,19 @@ p {
 }
 
 .card:hover {
-  transform: translateY(-2px);
+  transform: translateY(-4px);
   box-shadow: var(--shadow-lg);
 }
 
 .section {
   padding: var(--spacing-3xl) var(--spacing-xl);
-  margin: var(--spacing-2xl) 0;
 }
 
 /* Navigation fixe */
 .navbar {
-  background: var(--color-white);
-  backdrop-filter: blur(12px);
-  border-bottom: 1px solid rgba(15, 23, 42, 0.1);
+  background: rgba(255, 255, 255, 0.8);
+  backdrop-filter: blur(10px);
+  border-bottom: 1px solid rgba(0, 0, 0, 0.1);
   position: fixed;
   top: 0;
   width: 100%;
@@ -147,53 +115,42 @@ p {
   transition: all 0.3s ease;
 }
 
+/* --- MODIFICATIONS ICI --- */
 /* Hero section */
 .hero {
-  background: var(--color-primary);
   min-height: 100vh;
   display: flex;
   align-items: center;
   justify-content: center;
   text-align: center;
-  padding: var(--spacing-3xl);
+  padding: var(--spacing-xl);
   position: relative;
 }
 
-.hero::before {
-  content: '';
-  position: absolute;
-  top: 0;
-  left: 0;
-  right: 0;
-  bottom: 0;
-  background: linear-gradient(135deg, rgba(236, 236, 117, 0.9) 0%, rgba(230, 230, 124, 0.8) 100%);
-  z-index: -1;
+/* Applique le filtre de flou sur la vidéo */
+.hero-video {
+  filter: blur(3px); /* Vous pouvez ajuster cette valeur (ex: 2px, 4px) */
 }
+
+/* Ajoute une ombre portée pour la lisibilité du texte */
+.hero-text {
+  text-shadow: 0px 2px 4px rgba(0, 0, 0, 0.5);
+}
+/* --- FIN DES MODIFICATIONS --- */
 
 /* Responsive design */
 @media (max-width: 768px) {
-  h1 {
-    font-size: 2.5rem;
-  }
-  
-  h2 {
-    font-size: 2rem;
-  }
-  
-  .hero {
-    padding: var(--spacing-2xl) var(--spacing-lg);
-  }
-  
-  .section {
-    padding: var(--spacing-2xl) var(--spacing-lg);
-  }
+  h1 { font-size: 2.5rem; }
+  h2 { font-size: 2rem; }
+  .hero { padding: var(--spacing-2xl) 1.5rem; }
+  .section { padding: var(--spacing-2xl) 1.5rem; }
 }
 
-/* Animations et transitions */
+/* Animations */
 .fade-in {
   opacity: 0;
   transform: translateY(20px);
-  animation: fadeIn 0.6s ease forwards;
+  animation: fadeIn 0.8s ease-out forwards;
 }
 
 @keyframes fadeIn {
@@ -208,9 +165,7 @@ html {
   scroll-behavior: smooth;
 }
 
-/* Focus states pour accessibilité */
-.btn-primary:focus,
-.btn-secondary:focus {
-  outline: 2px solid var(--color-black);
-  outline-offset: 2px;
-}
+/* Classes utilitaires pour couleurs */
+.text-accent { color: var(--color-accent); }
+.text-secondary { color: var(--color-secondary); }
+.border-secondary { border-color: var(--color-secondary); }

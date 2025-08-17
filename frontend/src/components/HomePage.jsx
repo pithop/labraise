@@ -18,16 +18,26 @@ const HomePage = () => {
     <div className="min-h-screen">
       <Navigation />
       
-      {/* Hero Section */}
-      <section id="home" className="hero">
-        <div className="max-w-4xl mx-auto text-center fade-in">
-          <h1 className="font-serif font-bold text-black mb-6">
+      {/* Hero Section with Video Background */}
+      <section id="home" className="hero relative overflow-hidden">
+        <video 
+          autoPlay 
+          loop 
+          muted 
+          className="hero-video absolute z-0 w-full h-full object-cover"
+        >
+          <source src="/videos/hero-video.mp4" type="video/mp4" />
+          Votre navigateur ne supporte pas la vidéo.
+        </video>
+        
+        <div className="relative z-10 max-w-4xl mx-auto text-center fade-in p-8 rounded-lg">
+          <h1 className="hero-text font-serif font-bold text-white mb-6">
             À La Braise : L'Authentique Goût de la Braise au Cœur de Montpellier
           </h1>
-          <p className="text-xl mb-4 max-w-3xl mx-auto text-gray-900 font-medium">
+          <p className="hero-text text-xl mb-4 max-w-3xl mx-auto text-gray-200 font-medium">
             {restaurantInfo.slogan}
           </p>
-          <p className="text-lg mb-8 max-w-2xl mx-auto leading-relaxed">
+          <p className="hero-text text-lg mb-8 max-w-2xl mx-auto leading-relaxed text-gray-300">
             {restaurantInfo.description}
           </p>
           <div className="flex flex-col sm:flex-row justify-center gap-4">
@@ -41,13 +51,13 @@ const HomePage = () => {
         </div>
       </section>
 
-      {/* Section Notre Concept */}
+      {/* Section Notre Concept (le reste du fichier est identique) */}
       <section id="concept" className="section bg-white">
         <div className="max-w-6xl mx-auto">
           <div className="text-center mb-12">
             <h2 className="font-serif font-bold text-black">Notre Passion, le Feu de Bois</h2>
             <div className="flex justify-center mb-6">
-              <Flame className="h-12 w-12 text-orange-600" />
+              <Flame className="h-12 w-12 text-accent" />
             </div>
           </div>
           
@@ -55,7 +65,7 @@ const HomePage = () => {
             <div>
               <div className="space-y-6">
                 <div className="flex items-start space-x-4">
-                  <Award className="h-8 w-8 text-orange-600 mt-1" />
+                  <Award className="h-8 w-8 text-accent mt-1" />
                   <div>
                     <h3 className="font-sans font-semibold text-black mb-2">Cuisson Maîtrisée</h3>
                     <p className="text-gray-700">
@@ -65,7 +75,7 @@ const HomePage = () => {
                 </div>
                 
                 <div className="flex items-start space-x-4">
-                  <Star className="h-8 w-8 text-orange-600 mt-1" />
+                  <Star className="h-8 w-8 text-accent mt-1" />
                   <div>
                     <h3 className="font-sans font-semibold text-black mb-2">Produits de Qualité</h3>
                     <p className="text-gray-700">
@@ -75,7 +85,7 @@ const HomePage = () => {
                 </div>
                 
                 <div className="flex items-start space-x-4">
-                  <Users className="h-8 w-8 text-orange-600 mt-1" />
+                  <Users className="h-8 w-8 text-accent mt-1" />
                   <div>
                     <h3 className="font-sans font-semibold text-black mb-2">Ambiance Familiale</h3>
                     <p className="text-gray-700">
@@ -100,9 +110,9 @@ const HomePage = () => {
           </div>
         </div>
       </section>
-
-      {/* Section Menu */}
-      <section id="menu" className="section">
+      {/* ... Le reste du fichier reste inchangé ... */}
+       {/* Section Menu */}
+       <section id="menu" className="section">
         <div className="max-w-6xl mx-auto">
           <div className="text-center mb-12">
             <h2 className="font-serif font-bold text-black">Une Carte pour les Amateurs de Grillades</h2>
@@ -112,7 +122,6 @@ const HomePage = () => {
           </div>
 
           <div className="grid lg:grid-cols-2 gap-8">
-            {/* Entrées */}
             <div className="card">
               <h3 className="font-serif font-semibold text-black mb-6 text-center">Entrées</h3>
               <div className="space-y-4">
@@ -128,7 +137,6 @@ const HomePage = () => {
               </div>
             </div>
 
-            {/* Grillades */}
             <div className="card">
               <h3 className="font-serif font-semibold text-black mb-6 text-center">Nos Grillades au Feu de Bois</h3>
               <div className="space-y-4">
@@ -148,7 +156,6 @@ const HomePage = () => {
               </div>
             </div>
 
-            {/* Brochettes */}
             <div className="card">
               <h3 className="font-serif font-semibold text-black mb-6 text-center">Nos Brochettes Maison</h3>
               <div className="space-y-4">
@@ -164,7 +171,6 @@ const HomePage = () => {
               </div>
             </div>
 
-            {/* Burgers */}
             <div className="card">
               <h3 className="font-serif font-semibold text-black mb-6 text-center">Nos Burgers Gourmands</h3>
               <div className="space-y-4">
@@ -180,7 +186,6 @@ const HomePage = () => {
               </div>
             </div>
 
-            {/* Accompagnements */}
             <div className="card">
               <h3 className="font-serif font-semibold text-black mb-6 text-center">Nos Accompagnements Faits Maison</h3>
               <div className="space-y-4">
@@ -196,7 +201,6 @@ const HomePage = () => {
               </div>
             </div>
 
-            {/* Desserts */}
             <div className="card">
               <h3 className="font-serif font-semibold text-black mb-6 text-center">Nos Desserts Maison</h3>
               <div className="space-y-4">
@@ -289,17 +293,17 @@ const HomePage = () => {
               <h4 className="font-semibold text-lg mb-4">Contact</h4>
               <div className="space-y-3">
                 <div className="flex items-center space-x-3">
-                  <MapPin className="h-5 w-5 text-lime-400" />
+                  <MapPin className="h-5 w-5 text-secondary" />
                   <span className="text-gray-300">{restaurantInfo.contact.address}</span>
                 </div>
                 <div className="flex items-center space-x-3">
-                  <Phone className="h-5 w-5 text-lime-400" />
+                  <Phone className="h-5 w-5 text-secondary" />
                   <a href={`tel:${restaurantInfo.contact.phone}`} className="text-gray-300 hover:text-white">
                     {restaurantInfo.contact.phone}
                   </a>
                 </div>
                 <div className="flex items-center space-x-3">
-                  <Clock className="h-5 w-5 text-lime-400" />
+                  <Clock className="h-5 w-5 text-secondary" />
                   <span className="text-gray-300">{restaurantInfo.contact.hours}</span>
                 </div>
               </div>
@@ -309,7 +313,7 @@ const HomePage = () => {
               <h4 className="font-semibold text-lg mb-4">Témoignages</h4>
               <div className="space-y-4">
                 {testimonials.slice(0, 2).map(testimonial => (
-                  <div key={testimonial.id} className="border-l-2 border-lime-400 pl-4">
+                  <div key={testimonial.id} className="border-l-2 border-secondary pl-4">
                     <div className="flex space-x-1 mb-1">
                       {[...Array(testimonial.rating)].map((_, i) => (
                         <Star key={i} className="h-4 w-4 fill-yellow-400 text-yellow-400" />
@@ -325,7 +329,7 @@ const HomePage = () => {
 
           <div className="border-t border-gray-800 mt-8 pt-6 text-center">
             <p className="text-gray-400">
-              © 2024 À La Braise - Tous droits réservés
+              © 2025 À La Braise - Tous droits réservés
             </p>
           </div>
         </div>
