@@ -4,6 +4,13 @@ import { Clock, MapPin, Phone, Star, Flame, Users, Award } from 'lucide-react';
 import { restaurantInfo, menuData, galleryImages, testimonials } from '../mock';
 
 const HomePage = () => {
+  const videoRef = useRef(null); 
+
+  useEffect(() => { 
+    if (videoRef.current) {
+      videoRef.current.play();
+    }
+  }, []);
   const handleReservation = () => {
     // Mock: Dans la vraie version, cela ouvrira un système de réservation
     alert('Système de réservation - Appelez le 06 03 10 37 92 pour réserver');
@@ -21,6 +28,7 @@ const HomePage = () => {
       {/* Hero Section with Video Background */}
       <section id="home" className="hero relative overflow-hidden">
         <video 
+          ref={videoRef}
           autoPlay 
           loop 
           muted 
